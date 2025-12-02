@@ -20,6 +20,8 @@ import { TestimonialsSection } from "./testimonials-section"
 import { PricingSection } from "./pricing-section"
 import { CTASection } from "./cta-section"
 import { Footer } from "./footer"
+import { dashboard, login, register } from '@/routes';
+import { Link, usePage } from "@inertiajs/react"
 
 const navItems = [
   { name: "Fitur", link: "#features" },
@@ -27,7 +29,6 @@ const navItems = [
   { name: "Showcase", link: "#showcase" },
   { name: "Testimoni", link: "#testimonials" },
 ]
-
 export function Landing() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
@@ -38,8 +39,10 @@ export function Landing() {
           <NavbarLogo />
           <NavItems items={navItems} />
           <div className="flex items-center gap-4">
-            <NavbarButton variant="secondary">Login</NavbarButton>
-            <NavbarButton className="bg-blue-600 hover:bg-blue-700 text-white rounded-xl">Register</NavbarButton>
+            <NavbarButton variant="secondary">
+              <Link href={login()}>Log in</Link>
+            </NavbarButton>
+            <NavbarButton className="bg-blue-600 hover:bg-blue-700 text-white rounded-xl"><Link href={register()}>Register</Link></NavbarButton>
           </div>
         </NavBody>
 
