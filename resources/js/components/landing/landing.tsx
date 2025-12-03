@@ -63,12 +63,10 @@ export function Landing() {
               </a>
             ))}
             <div className="flex w-full flex-col gap-4">
-              <NavbarButton onClick={() => setIsMobileMenuOpen(false)} variant="secondary" className="w-full">
-                Login
-              </NavbarButton>
-              <NavbarButton onClick={() => setIsMobileMenuOpen(false)} variant="primary" className="w-full">
-                Daftar Gratis
-              </NavbarButton>
+              <NavbarButton variant="secondary">
+              <Link href={login()}>Log in</Link>
+            </NavbarButton>
+            <NavbarButton className="bg-blue-600 hover:bg-blue-700 text-white rounded-xl"><Link href={register()}>Register</Link></NavbarButton>
             </div>
           </MobileNavMenu>
         </MobileNav>
