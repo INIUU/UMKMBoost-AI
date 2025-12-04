@@ -36,8 +36,33 @@ class FortifyServiceProvider extends ServiceProvider
     {
         $this->configureActions();
         $this->configureViews();
+        $this->configureCustomAuthentication(); 
         $this->configureRateLimiting();
     }
+
+    private function configureCustomAuthentication(): void
+{
+    Fortify::authenticateUsing(function (Request $request) {
+        $user = \App\Models\User::where('email', $request->email)->first();
+
+        // Email tidak ditemukan
+        if (! $user) {
+            throw \Illuminate\Validation\ValidationException::withMessages([
+                'email' => 'Email tidak terdaftar.',
+            ]);
+        }
+
+        // Password salah
+        if (! \Illuminate\Support\Facades\Hash::check($request->password, $user->password)) {
+            throw \Illuminate\Validation\ValidationException::withMessages([
+                'password' => 'Password yang Anda masukkan salah.',
+            ]);
+        }
+
+        return $user; // sukses login
+    });
+}
+
 
     /**
      * Configure Fortify actions.

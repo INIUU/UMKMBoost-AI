@@ -16,10 +16,7 @@ class RegisterResponse implements RegisterResponseContract
     public function toResponse($request)
     {
         $email = $request->input('email');
-        
-        // Log untuk debugging
-        \Log::info('RegisterResponse called', ['email' => $email]);
-        
+               
         if ($request->wantsJson()) {
             return new JsonResponse([
                 'message' => 'Registration successful. Please verify your email.',
