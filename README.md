@@ -1,10 +1,6 @@
 # FinSight — Smart Financial Insight Dashboard
 
-FinSight adalah aplikasi web untuk membantu pelaku usaha kecil menghitung modal, keuntungan, dan estimasi waktu balik modal (Break-Even Point — BEP). Tersedia juga AI Assistant gratis (menggunakan model lokal / open‑source) untuk saran bisnis ringan, analisis sederhana, dan penjelasan laporan keuangan.
-
-# FinSight — Smart Financial Insight Dashboard
-
-FinSight adalah aplikasi web untuk membantu pelaku usaha kecil dan UMKM mengelola keuangan usaha: menghitung modal, memantau pengeluaran dan pemasukan, serta memperkirakan waktu balik modal (BEP). Aplikasi ini juga menyertakan AI Assistant ringan untuk rekomendasi dan analisis sederhana.
+FinSight adalah aplikasi web untuk membantu pelaku usaha kecil dan UMKM mengelola keuangan usaha: menghitung modal, memantau pengeluaran dan pemasukan, serta memperkirakan waktu balik modal (BEP).
 
 ---
 
